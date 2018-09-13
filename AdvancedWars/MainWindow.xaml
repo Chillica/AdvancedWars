@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AdvancedWars"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="256" Width="512">
+    <Window.Resources>
+        <BitmapImage x:Key="sprite" UriSource="Resources/bkg_sky.png" />
+    </Window.Resources>
     <Canvas x:Name="World">
-        
+        <!--
+        <Rectangle Width="32" Height="32">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="{StaticResource sprite}" ViewboxUnits="Absolute" Viewbox="0,0,32,32" />
+            </Rectangle.Fill>
+        </Rectangle>
+
+        <Rectangle Width="32" Height="32" Canvas.Bottom="0" Canvas.Right="30">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="{StaticResource sprite}" ViewboxUnits="Absolute" Viewbox="0,0,32,32" />
+            </Rectangle.Fill>
+        </Rectangle>-->
     </Canvas>
 </Window>
