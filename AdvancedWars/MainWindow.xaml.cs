@@ -23,29 +23,36 @@ namespace AdvancedWars
         public MainWindow()
         {
             InitializeComponent();
-            Rectangle grass;
             ImageBrush grassBrush;
-            int brushH = 64;
-            int brushW = 64;
+
+            int brushH = 32;
+            int brushW = 32;
 
             grassBrush = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/bkg_sky.png")),
+                ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/bkg_sky.png")),
                 ViewboxUnits = BrushMappingMode.Absolute,
-                Viewbox = new Rect(32, 32, brushW, brushH)
+                Viewbox = new Rect(0, 0, brushW, brushH)
             };
 
-            grass = new Rectangle
+            for (int i = 0; i < 256; i+=brushH)
             {
-                Width = brushW,
-                Height = brushH,
-                Fill = grassBrush
-            };
+                for (int j = 0; j < 512; j += brushW)
+                {
+                    Rectangle grass = new Rectangle
+                    {
+                        Width = brushW,
+                        Height = brushH,
+                        Fill = grassBrush,
+                        Name = "grass" + i.ToString() + j.ToString()
+                    };
 
+                    World.Children.Add(grass);
 
-            World.Children.Add(grass);
-            Canvas.SetTop(grass, 100);
-            Canvas.SetLeft(grass, 100);
+                    Canvas.SetTop(grass, i);
+                    Canvas.SetLeft(grass, j);
+                }
+            }
         }
     }
 }
