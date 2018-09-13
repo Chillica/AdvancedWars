@@ -30,7 +30,7 @@ namespace AdvancedWars
 
             grassBrush = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri("pack://application:,,,/images/bkg_sky.png")),
+                ImageSource = new BitmapImage(new Uri("pack://application:,,,/Resources/OverWorldTemplate.png")),
                 ViewboxUnits = BrushMappingMode.Absolute,
                 Viewbox = new Rect(32, 32, brushW, brushH)
             };
